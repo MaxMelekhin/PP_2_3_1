@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>email</th>
+    </tr>
+    <th:block th:each="user : ${allUsers}">
+        <tr>
+            <td th:text="${user.getName}"></td>
+            <td th:text="${user.getSurname}"></td>
+            <td th:text="${user.getEmail}"></td>
+        </tr>
+    </th:block>
+
+
+</table>
+    <br>
+
+<input type="button" value="Add" onclick="window.location.href='/users/addNewUser'"/>
+
+</body>
+
+</html>
