@@ -24,7 +24,6 @@ public class UserController {
     }
 
     @GetMapping("/addNewUser")
-    //Добавляем нового работника через форму,реализованную в папке views,через форму передаются параметры новому созданному юзеру
     public String addNewUser(Model model) {
         User user = new User();
         model.addAttribute("user", user);
