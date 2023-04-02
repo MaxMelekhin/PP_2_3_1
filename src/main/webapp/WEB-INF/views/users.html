@@ -10,19 +10,34 @@
     <tr>
         <th>Name</th>
         <th>Surname</th>
-        <th>email</th>
+        <th>Email</th>
+        <th></th>
+        <th></th>
     </tr>
     <th:block th:each="user : ${allUsers}">
         <tr>
             <td th:text="${user.getName}"></td>
             <td th:text="${user.getSurname}"></td>
             <td th:text="${user.getEmail}"></td>
+
+            <td>
+                <form method="get" th:action="@{/users/{id}/userinfo2(id=${user.getId()})}">
+                    <input type="submit" value="Update"/>
+                </form>
+            </td>
+
+            <td>
+                <form th:method="DELETE" th:action="@{/users/{id}(id=${user.getId()})}">
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
+
         </tr>
     </th:block>
 
 
 </table>
-    <br>
+<br>
 
 <input type="button" value="Add" onclick="window.location.href='/users/addNewUser'"/>
 
